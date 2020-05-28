@@ -1,7 +1,34 @@
 <body>
     <div class="postParent">
+        <div id="addPost">Add Post</div>
         {{#each forumData}}
             {{> post}}
         {{/each}}
+    </div>
+
+    <div id="modalBackdrop" class="hideModal"></div>
+        <div id="addPostModal" class="hideModal">
+        <div class="modalDialog">
+            <button type="button" id="modalCloseButton">&times;</button>
+            <div class="modalBody">
+            <div class="modalInputElement">
+                <label for="modalTitleInput">Title</label>
+                <input type="text" id="modalTitleInput" />
+            </div>
+            <div class="modalInputElement">
+                <label for="modalQuestionInput">Question</label>
+                <textarea id="modalTextInput"></textarea>
+            </div>
+            <div class="modalInputElement">
+                <label for="modalAuthorInput">Author</label>
+                <input type="text" id="modalAuthorInput" />
+            </div>
+            </div>
+
+            <div class="modal-footer">
+            <button type="button" id="modalCancelButton">Cancel</button>
+            <button type="button" id="modalAcceptButton">Create modal</button>
+            </div>
+        </div>
     </div>
 </body>

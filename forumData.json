@@ -1,10 +1,14 @@
 [
     {
     "title": "Test forum post",
+    "text": "blah blah blah",
+    "author": "Paul Lim",
     "date": "5/25/2020"
     },
     {
         "title": "This is a post",
+        "text": "random question",
+        "author": "Guy",
         "date": "4/1/2020"
     }
 ]
