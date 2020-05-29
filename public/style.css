@@ -269,6 +269,19 @@ body {
     background-color: #087dde;
 }
 
+/* Post */
+.questionTitle {
+    background: #e7e7e7;
+    display: flex;
+    align-items: center;
+    height: 70px;
+    margin-top: 10px;
+    width: calc(100% - 40px);
+    max-width: 1000px;
+    border: 1px solid #d3d3d3;
+    padding: 0 25px;
+}
+
 /* 404 Page Styles */
 .errorMessage {
     display: flex;

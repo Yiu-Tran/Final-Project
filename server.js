@@ -16,9 +16,16 @@ app.get('/', (req, res) => {
 });
 
 app.get('/contact', (req, res) => {
-  res.render('contact', {forumData: forumData});
+  res.render('contact', {forumData: forumData, contactHome: true});
   res.status(200);
 });
+
+for(let i = 0; i < forumData.length; i++) {
+  app.get('/contact/' + forumData[i].id, (req, res) => {
+    res.render('contact', {forumData: forumData[i], contactSubpage: true});
+    res.status(200);
+  });
+}
 
 app.get('*', (req, res) => {
   res.render('404');

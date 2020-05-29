@@ -1,14 +1,23 @@
 [
     {
-    "title": "Test forum post",
-    "text": "blah blah blah",
-    "author": "Paul Lim",
-    "date": "5/25/2020"
+        "title": "Test forum post",
+        "text": "blah blah blah",
+        "author": "Paul Lim",
+        "date": "5/25/2020",
+        "id": "56757d12-48f8-4ae0-a2d4-eb0ab1fc0ed6",
+        "comments": [
+            {
+                "author": "Random girl",
+                "date": "5/26/2020",
+                "text": "Hello"
+            }
+        ]
     },
     {
         "title": "This is a post",
         "text": "random question",
         "author": "Guy",
-        "date": "4/1/2020"
+        "date": "4/1/2020",
+        "id": "09379a5d-81a9-4ce5-b062-1110550edb4b"
     }
 ]

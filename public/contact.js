@@ -13,14 +13,18 @@ document.getElementById('modalCancelButton').onclick = () => {
     document.getElementById('modalBackdrop').style.display = 'none';
 }
 
-document.getElementById('modalAcceptButton').onclick = () => {
-    const title = document.getElementById('modalTitleInput').value;
-    const text = document.getElementById('modalTextInput').value;
-    const author = document.getElementById('modalAuthorInput').value;
+// document.getElementById('modalAcceptButton').onclick = () => {
+//     const title = document.getElementById('modalTitleInput').value;
+//     const text = document.getElementById('modalTextInput').value;
+//     const author = document.getElementById('modalAuthorInput').value;
 
-    let parsedJSON = JSON.parse(fs.readFileSync('../forumDat.json'.toString()));
-    console.log(parsedJSON);
+//     document.getElementById('addPostModal').style.display = 'none';
+//     document.getElementById('modalBackdrop').style.display = 'none';
+// }
 
-    document.getElementById('addPostModal').style.display = 'none';
-    document.getElementById('modalBackdrop').style.display = 'none';
+const posts = document.getElementsByClassName('postFlexWrapper');
+for(let i = 0; i < posts.length; i++) {
+    posts[i].onclick = () => {
+        window.location.href = `/contact/${posts[i].getAttribute('data-value')}`;
+    }
 }

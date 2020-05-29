@@ -1,4 +1,5 @@
 <body>
+    {{#if contactHome}}
     <div class="postParent">
         <div id="addPost">Add Post</div>
         {{#each forumData}}
@@ -31,4 +32,18 @@
             </div>
         </div>
     </div>
+    {{/if}}
+
+    {{#if contactSubpage}}
+        <div class="question">
+            <h1 class="questionTitle">{{this.forumData.title}}</h1>
+            <div class="questionAuthor">{{this.forumData.author}}</div>
+            <div class="questionDate">{{this.forumData.date}}</div>
+            <div class="questionText">{{this.forumData.text}}</div>
+            {{#each this.forumData.comments}}
+                {{> comment}}
+            {{/each}}
+        </div>
+    {{/if}}
+
 </body>
