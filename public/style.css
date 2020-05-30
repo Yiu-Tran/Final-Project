@@ -8,7 +8,7 @@
     .slideshow-container {
         display: none;
     }
-} 
+}
 
 body {
     margin-top: 100px;
@@ -270,16 +270,58 @@ body {
 }
 
 /* Post */
-.questionTitle {
-    background: #e7e7e7;
-    display: flex;
+.questionFlexWrapper {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    height: 70px;
-    margin-top: 10px;
-    width: calc(100% - 40px);
-    max-width: 1000px;
+}
+
+.question {
+    width: 60%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    background: #f0f0f0;
+    padding: 20px;
     border: 1px solid #d3d3d3;
-    padding: 0 25px;
+}
+
+.questionTitle {
+    font-size: 24px;
+}
+
+.questionText {
+    margin-top: 20px;
+}
+
+.addComment {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    max-width: 800px;
+    margin-top: 20px;
+    align-items: flex-end;
+}
+
+.addCommentText {
+    align-self: stretch;
+    padding: 5px;
+    height: 80px;
+}
+
+.addCommentButton {
+    margin-top: 5px;
+    width: 80px;
+}
+
+@media (max-width:765px) {
+    .question {
+        width: 80%;
+    }
+    .addComment {
+        width: 80%;
+    }
 }
 
 /* 404 Page Styles */

@@ -35,15 +35,20 @@
     {{/if}}
 
     {{#if contactSubpage}}
+    <div class="questionFlexWrapper">
         <div class="question">
-            <h1 class="questionTitle">{{this.forumData.title}}</h1>
-            <div class="questionAuthor">{{this.forumData.author}}</div>
-            <div class="questionDate">{{this.forumData.date}}</div>
+            <div class="questionTitle">{{this.forumData.title}}</div>
+            <div class="questionAuthor">{{this.forumData.author}} - {{this.forumData.date}}</div>
             <div class="questionText">{{this.forumData.text}}</div>
-            {{#each this.forumData.comments}}
-                {{> comment}}
-            {{/each}}
         </div>
+        <div class="addComment">
+            <textarea class="addCommentText" placeholder="Your answer..."></textarea>
+            <button class="addCommentButton">Comment</div>
+        </div>
+        {{#each this.forumData.comments}}
+            {{> comment}}
+        {{/each}}
+    </div>
     {{/if}}
 
 </body>
