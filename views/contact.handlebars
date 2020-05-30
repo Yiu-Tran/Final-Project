@@ -41,13 +41,13 @@
             <div class="questionAuthor">{{this.forumData.author}} - {{this.forumData.date}}</div>
             <div class="questionText">{{this.forumData.text}}</div>
         </div>
+        {{#each this.forumData.comments}}
+            {{> comment}}
+        {{/each}}
         <div class="addComment">
             <textarea class="addCommentText" placeholder="Your answer..."></textarea>
             <button class="addCommentButton">Comment</div>
         </div>
-        {{#each this.forumData.comments}}
-            {{> comment}}
-        {{/each}}
     </div>
     {{/if}}
 

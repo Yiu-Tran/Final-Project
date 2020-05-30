@@ -28,3 +28,4 @@ for(let i = 0; i < posts.length; i++) {
         window.location.href = `/contact/${posts[i].getAttribute('data-value')}`;
     }
 }
+
