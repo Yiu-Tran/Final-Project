@@ -352,6 +352,11 @@ body {
     }
 }
 
+#pageContent {
+    text-align: center;
+    font-size: 25px;
+}
+
 /* 404 Page Styles */
 .errorMessage {
     display: flex;

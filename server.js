@@ -53,9 +53,26 @@ app.post('/addPost', (req, res) => {
   });
 });
 
+app.get('/insurance', (req, res) => {
+  res.render('insurance');
+  res.status(200);
+});
+
+app.get('/dentalVision', (req, res) => {
+  res.render('dentalVision');
+  res.status(200);
+});
+
+app.get('/lifeDisability', (req, res) => {
+  res.render('lifeDisability');
+  res.status(200);
+});
+
 app.get('*', (req, res) => {
   res.render('404');
   res.status(404);
 });
 
 app.listen(port, () => console.log("== Server is listening on port", port));
+
+
