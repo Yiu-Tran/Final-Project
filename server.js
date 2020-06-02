@@ -24,30 +24,32 @@ app.get('/', (req, res) => {
 });
 
 app.get('/contact', async(req, res) => {
-  const posts = await Post.find({}).lean()
+  const posts = await Post.find({}).lean();
   res.render('contact', {forumData: posts, contactHome: true});
   res.status(200);
 });
 
-// for(let i = 0; i < posts.length; i++) {
-//   app.get('/contact/' + posts[i].id, (req, res) => {
-//     res.render('contact', {posts: posts[i], contactSubpage: true});
-//     res.status(200);
-//   });
-// }
+app.get('/contact/:postID', async(req, res) => {
+  const post = await Post.findOne({_id: req.params.postID}).lean();
+  res.render('contact', {post: post, contactSubpage: true});
+  res.status(200);
+});
 
 app.post('/addPost', (req, res) => {
+  let date = new Date();
+  parsedDate = (date.getMonth() > 8) ? (date.getMonth() + 1) : ('0' + (date.getMonth() + 1)) + '/' + ((date.getDate() > 9) ? date.getDate() : ('0' + date.getDate())) + '/' + date.getFullYear()
   const post = new Post({
     title: req.body.title,
     text: req.body.text,
     author: req.body.author,
-    date: Date()
+    date: parsedDate
   });
   post.save().then(async() => {
       res.redirect('/contact');
   })
   .catch((e) => {
     console.log('Error saving to MongoDB' + e);
+    res.redirect('404');
   });
 });
 

@@ -5,11 +5,11 @@ const PostSchema = new Schema({
     title: String,
     text: String,
     author: String,
-    date: Date,
+    date: String,
     comments: [
         {
             author: String,
-            date: Date,
+            date: String,
             text: String
         }
     ]

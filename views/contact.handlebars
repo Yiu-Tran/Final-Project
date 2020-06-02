@@ -1,5 +1,6 @@
 <body>
     {{#if contactHome}}
+    <script src="/contact.js" charset="utf-8" defer></script>
     <div class="postParent">
         <div id="addPost">Add Post</div>
         {{#each forumData}}
@@ -37,11 +38,11 @@
     {{#if contactSubpage}}
     <div class="questionFlexWrapper">
         <div class="question">
-            <div class="questionTitle">{{this.forumData.title}}</div>
-            <div class="questionAuthor">{{this.forumData.author}} - {{this.forumData.date}}</div>
-            <div class="questionText">{{this.forumData.text}}</div>
+            <div class="questionTitle">{{this.post.title}}</div>
+            <div class="questionAuthor">{{this.post.author}} - {{this.post.date}}</div>
+            <div class="questionText">{{this.post.text}}</div>
         </div>
-        {{#each this.forumData.comments}}
+        {{#each this.post.comments}}
             {{> comment}}
         {{/each}}
         <div class="addComment">
