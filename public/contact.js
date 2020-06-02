@@ -13,14 +13,10 @@ document.getElementById('modalCancelButton').onclick = () => {
     document.getElementById('modalBackdrop').style.display = 'none';
 }
 
-// document.getElementById('modalAcceptButton').onclick = () => {
-//     const title = document.getElementById('modalTitleInput').value;
-//     const text = document.getElementById('modalTextInput').value;
-//     const author = document.getElementById('modalAuthorInput').value;
-
-//     document.getElementById('addPostModal').style.display = 'none';
-//     document.getElementById('modalBackdrop').style.display = 'none';
-// }
+document.getElementById('modalAcceptButton').onclick = () => {
+    document.getElementById('addPostModal').style.display = 'none';
+    document.getElementById('modalBackdrop').style.display = 'none';
+}
 
 const posts = document.getElementsByClassName('postFlexWrapper');
 for(let i = 0; i < posts.length; i++) {
@@ -28,4 +24,3 @@ for(let i = 0; i < posts.length; i++) {
         window.location.href = `/contact/${posts[i].getAttribute('data-value')}`;
     }
 }
-
