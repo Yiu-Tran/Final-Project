@@ -101,6 +101,7 @@ body {
 .postFlexWrapper {
     background: #e7e7e7;
     display: flex;
+    justify-content: stretch;
     align-items: center;
     height: 70px;
     margin-top: 10px;
@@ -110,18 +111,20 @@ body {
     padding: 0 25px;
 }
 
-.postFlexWrapper:hover {
-    background: #d3d3d3;
-    cursor: pointer;
-}
-
 .post {
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 .postTitle {
     font-size: 24px;
+    flex: 1;
+}
+
+.postTitle:hover {
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .postContent {
