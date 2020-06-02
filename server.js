@@ -44,8 +44,7 @@ app.post('/addPost', (req, res) => {
     date: Date()
   });
   post.save().then(async() => {
-      const posts = await Post.find({}).lean()
-      res.render('contact', {forumData: posts, contactHome: true});
+      res.redirect('/contact');
   })
   .catch((e) => {
     console.log('Error saving to MongoDB' + e);
