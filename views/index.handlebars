@@ -1,3 +1,15 @@
+<script>
+function goToIndiv()
+{
+     location.href = "/individualReform";
+};
+    
+function goToBus()
+{
+     location.href = "/businessReform";
+};   
+</script>
+
 <body onload="initSlides()">
     <div class="slideshow-container container-fluid" onload="showSlides()">
         <div class="slides">
@@ -23,4 +35,17 @@
             </div>
         </div>
     </div>
+
+    <div class="main container">
+        <h1>Welcome</h1>
+        <p>Starting October 1, 2013 we will be able to assist you in applying for coverage through Cover Oregon (Oregon's insurance "exchange"). You will have the opportunity to choose the insurance company and benefit plan that best fits the needs of you and your family.</p>
+        <button type="button" href="/individualReform" class="inline-btn btn btn-primary" onclick="goToIndiv()">Read More</button>
+        
+        <hr>
+        
+        <h1>Working Together</h1>
+        <p>Businesses with fewer than 25 employees, that purchase through Cover Oregon, may be eligible for tax credits to help pay for employees' coverage. Starting in 2014, the tax credit covers up to 50% of premium costs for taxable organizations and up to 35% for tax-exempt organizations.</p>
+        <button type="button" class="inline-btn btn btn-primary" onclick="goToBus()">Read More</button>
+    </div>
+
 </body>

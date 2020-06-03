@@ -393,3 +393,25 @@ body {
     align-items: center;
     font-size: 24px;
 }
+
+.reit {
+    text-align: right;
+}
+
+.main {
+    padding-bottom: 25px;
+}
+
+.nodec {
+    text-decoration: none;
+    color: white;
+}
+
+.nodec :hover{
+    text-decoration: none;
+    color: white;
+}
+
+.cntr {
+    text-align: center;
+}

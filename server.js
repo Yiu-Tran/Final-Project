@@ -90,6 +90,17 @@ app.get('/dentalVision', (req, res) => {
   res.status(200);
 });
 
+app.get('/individualReform', (req, res) => {
+  res.render('individualReform');
+  res.status(200);
+});
+
+app.get('/businessReform', (req, res) => {
+  res.render('businessReform');
+  res.status(200);
+});
+
+
 app.get('/lifeDisability', (req, res) => {
   res.render('lifeDisability');
   res.status(200);
