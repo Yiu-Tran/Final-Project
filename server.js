@@ -10,7 +10,7 @@ const port = process.env.PORT || 3000;
 mongoose.connect('mongodb://localhost/post', { useNewUrlParser: true , useUnifiedTopology: true});
 mongoose.connection
   .once('open', () => console.log('Connection has been made with mongoDB'))
-  .on('error', (e) => console.log('Connection error with mongoDB: ' + e));
+  .on('error', e => console.log('Connection error with mongoDB: ' + e));
 
 app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
@@ -42,7 +42,8 @@ app.post('/addPost', (req, res) => {
     title: req.body.title,
     text: req.body.text,
     author: req.body.author,
-    date: parsedDate
+    date: parsedDate,
+    comments: [] 
   });
   post.save().then(async() => {
       res.redirect('/contact');
@@ -80,6 +81,23 @@ app.post('/deletePost', (req, res) => {
   });
 });
 
+app.post('/contact/:postID', (req, res) => {
+  let date = new Date();
+  parsedDate = (date.getMonth() > 8) ? (date.getMonth() + 1) : ('0' + (date.getMonth() + 1)) + '/' + ((date.getDate() > 9) ? date.getDate() : ('0' + date.getDate())) + '/' + date.getFullYear()
+  const comment = {
+    text: req.body.text,
+    date: parsedDate
+  }
+  Post.updateOne({_id: req.params.postID}, {$push: {comments: comment}})
+  .then(() => {
+    res.redirect(`/contact/${req.params.postID}`);
+  })
+  .catch(e => {
+    console.log('Error adding comment' + e);
+    res.redirect('404');
+  });
+});
+
 app.get('/insurance', (req, res) => {
   res.render('insurance');
   res.status(200);
@@ -112,5 +130,3 @@ app.get('*', (req, res) => {
 });
 
 app.listen(port, () => console.log("== Server is listening on port", port));
-
-

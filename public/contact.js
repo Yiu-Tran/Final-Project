@@ -57,7 +57,6 @@ for(let i = 0; i < postDeleteIcons.length; i++) {
         const postID = e.currentTarget.getAttribute('data-value');
         document.getElementsByClassName('modalPostID')[0].value = postID;
         const form = document.getElementById('addPostModal');
-        console.log('hit delete')
         form.action = 'deletePost';
         form.submit();
     }

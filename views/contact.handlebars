@@ -46,10 +46,10 @@
         {{#each this.post.comments}}
             {{> comment}}
         {{/each}}
-        <div class="addComment">
-            <textarea class="addCommentText" placeholder="Your answer..."></textarea>
-            <button class="addCommentButton">Comment</div>
-        </div>
+        <form class="addComment" method="post">
+            <textarea class="addCommentText" placeholder="Your answer..." name="text"></textarea>
+            <button type="submit" class="addCommentButton">Comment</div>
+        </form>
     </div>
     {{/if}}
 

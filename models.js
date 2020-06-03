@@ -8,9 +8,8 @@ const PostSchema = new Schema({
     date: String,
     comments: [
         {
-            author: String,
-            date: String,
-            text: String
+            text: String,
+            date: String
         }
     ]
 });
