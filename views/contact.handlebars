@@ -9,28 +9,29 @@
     </div>
 
     <div id="modalBackdrop" class="hideModal"></div>
-        <form id="addPostModal" class="hideModal" action="addPost" method="post">
-        <div class="modalDialog">
-            <button type="button" id="modalCloseButton">&times;</button>
-            <div class="modalBody">
-            <div class="modalInputElement">
-                <label for="title">Title</label>
-                <input type="text" id="modalTitleInput" name="title" />
-            </div>
-            <div class="modalInputElement">
-                <label for="question">Question</label>
-                <textarea id="modalTextInput" name="text"></textarea>
-            </div>
-            <div class="modalInputElement">
-                <label for="author">Author</label>
-                <input type="text" id="modalAuthorInput" name="author"/>
-            </div>
-            </div>
+        <form id="addPostModal" class="hideModal" method="post">
+            <div class="modalDialog">
+                <button type="button" id="modalCloseButton">&times;</button>
+                <div class="modalBody">
+                <div class="modalInputElement">
+                    <label for="title">Title</label>
+                    <input type="text" id="modalTitleInput" name="title"/>
+                </div>
+                <div class="modalInputElement">
+                    <label for="question">Question</label>
+                    <textarea id="modalTextInput" name="text"></textarea>
+                </div>
+                <div class="modalInputElement">
+                    <label for="author">Author</label>
+                    <input type="text" id="modalAuthorInput" name="author"/>
+                </div>
+                </div>
 
-            <div class="modal-footer">
-            <button type="button" id="modalCancelButton">Cancel</button>
-            <button type="submit" id="modalAcceptButton">Create modal</button>
+                <div class="modal-footer">
+                <button type="button" id="modalCancelButton">Cancel</button>
+                <button type="button" id="modalAcceptButton">Add Post</button>
             </div>
+            <input class="modalPostID" style="display: none;" name="id" /> 
         </form>
     </div>
     {{/if}}

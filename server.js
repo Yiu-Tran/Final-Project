@@ -47,8 +47,35 @@ app.post('/addPost', (req, res) => {
   post.save().then(async() => {
       res.redirect('/contact');
   })
-  .catch((e) => {
-    console.log('Error saving to MongoDB' + e);
+  .catch(e => {
+    console.log('Error adding post' + e);
+    res.redirect('404');
+  });
+});
+
+app.post('/editPost', (req, res) => {
+  const editedPost = {
+    title: req.body.title,
+    text: req.body.text,
+    author: req.body.author
+  }
+  Post.findOneAndUpdate({_id: req.body.id}, editedPost, {useFindAndModify: false})
+  .then(() => {
+    res.redirect('/contact');
+  })
+  .catch(e => {
+    console.log('Error updating post' + e);
+    res.redirect('404');
+  });
+});
+
+app.post('/deletePost', (req, res) => {
+  Post.deleteOne({_id: req.body.id})
+  .then(() => {
+    res.redirect('/contact');
+  })
+  .catch(e => {
+    console.log('Error updating post' + e);
     res.redirect('404');
   });
 });
