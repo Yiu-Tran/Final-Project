@@ -3,11 +3,12 @@ const exphbs = require('express-handlebars');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const Post = require('./models');
+require('dotenv').config();
 
 const app = express();
 const port = process.env.PORT || 3000;
 
-mongoose.connect('mongodb+srv://plim1025:290@post-ofnnn.mongodb.net/posts?retryWrites=true&w=majority', { useNewUrlParser: true , useUnifiedTopology: true});
+mongoose.connect(process.env.DB_CONNECT, { useNewUrlParser: true , useUnifiedTopology: true});
 mongoose.connection
   .once('open', () => console.log('Connection has been made with mongoDB'))
   .on('error', e => console.log('Connection error with mongoDB: ' + e));
