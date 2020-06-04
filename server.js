@@ -7,7 +7,7 @@ const Post = require('./models');
 const app = express();
 const port = process.env.PORT || 3000;
 
-mongoose.connect('mongodb://localhost/post', { useNewUrlParser: true , useUnifiedTopology: true});
+mongoose.connect('mongodb+srv://plim1025:290@post-ofnnn.mongodb.net/posts?retryWrites=true&w=majority', { useNewUrlParser: true , useUnifiedTopology: true});
 mongoose.connection
   .once('open', () => console.log('Connection has been made with mongoDB'))
   .on('error', e => console.log('Connection error with mongoDB: ' + e));
