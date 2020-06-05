@@ -32,8 +32,12 @@ app.get('/contact', async(req, res) => {
 
 app.get('/contact/:postID', async(req, res) => {
   const post = await Post.findOne({_id: req.params.postID}).lean();
-  res.render('contact', {post: post, contactSubpage: true});
+  res.render('contact', {
+    post: post, 
+    contactSubpage: true
+  });
   res.status(200);
+
 });
 
 app.post('/addPost', (req, res) => {
