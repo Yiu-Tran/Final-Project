@@ -413,6 +413,10 @@ body {
     text-align: center;
 }
 
-.transform{
+.transform {
     background-color:red;
-  }
+}
+
+#navbar li a:hover {
+    background-color: #dedede;
+}
