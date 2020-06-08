@@ -427,6 +427,11 @@ body {
     background-color: #dedede;
 }
 
+.IndividualReformPage {
+    margin-left: 35px;
+    margin-right: 35px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
 /*
 #navbar li a.dropdown-toggle:focus {
     background-color: #dedede;
