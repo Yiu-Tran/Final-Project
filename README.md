@@ -14,5 +14,3 @@ gkassociates.net
 -For example, your app is free of bugs and has an effective user interface.
 
 25 points – Your app is creative and original.
-
-Yiu - I'm doing the about page......
