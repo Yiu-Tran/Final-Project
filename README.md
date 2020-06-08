@@ -15,4 +15,4 @@ gkassociates.net
 
 25 points – Your app is creative and original.
 
-Yiu - I'm doing the about page......
+Yiu - I'm doing the about page, I added links to other websites.
