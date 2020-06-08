@@ -30,6 +30,11 @@ app.get('/contact', async(req, res) => {
   res.status(200);
 });
 
+app.get('/service', (req, res) => {
+  res.render('service');
+  res.status(200);
+});
+
 app.get('/insurance', (req, res) => {
   res.render('insurance');
   res.status(200);

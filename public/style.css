@@ -383,6 +383,10 @@ body {
     font-size: 25px;
 }
 
+.servicesContent {
+    text-align: center
+}
+
 /* 404 Page Styles */
 .errorMessage {
     display: flex;
@@ -392,7 +396,9 @@ body {
 }
 
 .reit {
-    text-align: right;
+    position: absolute;
+    right: 0;
+    text-align: left;
 }
 
 .main {
@@ -420,3 +426,9 @@ body {
 #navbar li a:hover {
     background-color: #dedede;
 }
+
+/*
+#navbar li a.dropdown-toggle:focus {
+    background-color: #dedede;
+}
+*/
